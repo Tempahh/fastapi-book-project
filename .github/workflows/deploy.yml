@@ -18,9 +18,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up uvicorn
+        - name: Install dependencies
         run: |
-          pip install uvicorn
+          pip install -r requirements.txt
 
       - name: Set up Nginx (on the actual server)
         run: |
