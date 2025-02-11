@@ -18,6 +18,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up uvicorn
+        run: |
+          pip install uvicorn
+
       - name: Set up Nginx (on the actual server)
         run: |
           sudo apt-get update
