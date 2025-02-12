@@ -18,20 +18,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-
       - name: Set up Nginx (on the actual server)
         run: |
           sudo apt-get update
           sudo apt-get install -y nginx
           sudo systemctl enable nginx
           sudo systemctl start nginx
-
-      - name: Deploy FastAPI App
-        run: |
-          uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
       - name: setup ssh key
         run: |
