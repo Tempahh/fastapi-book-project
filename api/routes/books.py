@@ -59,7 +59,7 @@ async def update_book(book_id: int, book: Book) -> Book:
 async def get_book(book_id: int) -> Book:
     book = JSONResponse(db.get_book(book_id).model_dump()) if db.get_book(book_id) else JSONResponse(
         status_code=status.HTTP_404_NOT_FOUND,
-        content={"detail": "Book not found."},
+        content={"detail": "Book not found this is a test."},
     )
     return book 
 
